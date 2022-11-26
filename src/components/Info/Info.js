@@ -8,15 +8,14 @@ function createArrayFromPhrase(phrase) {
   return [splitPhrase.join(' '), thirdWord];
 }
 
-const InfoSection = props => {
-  return (
-    <Grid className={`${props.className} info-section`}>
-      <Column md={8} lg={4} xlg={3}>
-        <h3 className="info-section__heading">{props.heading}</h3>
-      </Column>
-    </Grid>
-  );
-};
+const InfoSection = props => (
+  <Grid className={`${props.className} info-section`}>
+    <Column md={8} lg={4} xlg={3}>
+      <h3 className="info-section__heading">{props.heading}</h3>
+    </Column>
+    {props.children}
+  </Grid>
+);
 
 const InfoCard = props => {
   const splitHeading = createArrayFromPhrase(props.heading);
